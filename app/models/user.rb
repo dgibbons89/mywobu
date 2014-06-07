@@ -58,5 +58,5 @@ class User < ActiveRecord::Base
     end
     birthday || nil
   end
-end
+
 end
