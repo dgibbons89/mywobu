@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
     
 
-  root "pictures#index"
+  root "wobus#home"
   get "faq" => "pages#faq"
   get "facebook" => "pages#facebook"
 end
