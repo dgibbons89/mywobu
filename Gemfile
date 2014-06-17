@@ -11,7 +11,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem "omniauth-facebook"
 gem 'fb_graph'
 
 
