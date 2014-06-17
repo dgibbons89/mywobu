@@ -10,8 +10,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-facebook', '~> 1.4.1'
-gem 'koala'
+gem 'omniauth-facebook'
+gem 'devise', '3.1.0'
+gem "omniauth-facebook"
+gem 'fb_graph'
 
 
 
