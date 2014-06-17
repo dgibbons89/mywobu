@@ -1,15 +1,35 @@
 Rails.application.routes.draw do
-    get 'auth/:provider/callback', to: 'sessions#create'
-    get 'auth/failure', to: redirect('/')
-    get 'signout', to: 'sessions#destroy', as: 'signout'
 
     
-    resources :wobus
+ get "users" => "fb#users"	
 
+ get "albums" => "fb#albums"
 
+ get "photos" => "fb#photos"
+
+ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "users/registrations" }
+ devise_scope :user do
+    get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
+    delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+  root 'fb#users'
+  
     
 
-  root "wobus#home"
-  get "faq" => "pages#faq"
-  get "facebook" => "pages#facebook"
+  
+  get "sign_in" => "wobus#sign_in"
+
+  get "home" => "wobus#home"
+
+
+
+
+  
+  
+ 
+  
+  #if the user login session active, dashboard should be the homepage
+  #if the user not login, step_on page should be the homepage
+  
+  
 end

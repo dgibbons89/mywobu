@@ -1,3 +1,11 @@
+<div id="user_nav">
+  <% if current_user %>
+    Signed in as <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% else %>
+    <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-lg" %></li>
+  <% end %>
+</div>
 <h1>
   <%= image_tag(@me.picture) %>
   <%= link_to fb_albums_path(:user_id => @me.raw_attributes['id']) do %>

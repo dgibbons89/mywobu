@@ -9,7 +9,7 @@
       <span class="icon-bar"></span>
     </button>
     <%= link_to "Home", root_path, class: "navbar-brand" %>
-    <%= link_to "About", about_path %>
+    <%= link_to "Sign In", sign_in_path %>
     <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %>
           
   </div>
@@ -20,8 +20,8 @@
         <li><%= link_to "Home", root_path %></li>
         <% if user_signed_in? %>
           <li>
-            <%= link_to new_pin_path do %>
-              <span class="glyphicon glyphicon-plus"></span> New Pin
+            <%= link_to root_path %>
+              
             <% end %>
           </li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
