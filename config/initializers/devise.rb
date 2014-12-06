@@ -2,11 +2,12 @@
 # Many of these configuration options can be set straight in your model.
 require 'omniauth-google-oauth2'
 Devise.setup do |config|
-   config.omniauth :google_oauth2, ENV["GOOGLE_KEY"], ENV["GOOGLE_SECRET"], { access_type: "offline", approval_prompt: "" }
+  config.omniauth :google_oauth2, ENV["GOOGLE_KEY"], ENV["GOOGLE_SECRET"], { access_type: "offline", approval_prompt: "" }
+  
   # The secret key used by Devise. Devise uses this key to generate
-  # random tokens. Changing this key will render ivnalid all existing
+  # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '9d490df41d66ab21721f51b4c98630d2edb03c8bbaed347b3f8dab4113fd0042f0e7adcf97352966fc578707169c02edbf051458e94b6044cf91b4c8b518a951'
+  # config.secret_key = '2d78ba79d3b5fca1511f79bd242bb537495ef6b93e112a90c5606a1374c65ccd6b075bd871af6aa4e8a7b75abcfab948162fd6febd39abd861ba585a9c5fea5f'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -99,7 +100,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '3d9888f10d70909afd95c85f069ee885a974f7bbdd65bb82846f543bdb543b0f4ae62674789f571f3d25a045c8d53a7adc0fbf13e55a5c5241303f1bac2d1223'
+  # config.pepper = '120557ac6d7cdfd680594af920310fc0c3659938eac4a78922de79a00c260e3c9521b02488bdb658493fd4c4102ee036bd75df45e1da3069e5bca0c024ca36cb'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
