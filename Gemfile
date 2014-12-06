@@ -10,8 +10,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'fb_graph'
+gem 'omniauth-google-oauth2', '~> 0.2.6'
+gem 'figaro' 
 
 
 

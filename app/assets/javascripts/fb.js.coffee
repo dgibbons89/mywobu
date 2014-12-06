@@ -1,6 +1,3 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
   $('body').prepend('<div id="fb-root"></div>')
 
@@ -9,20 +6,18 @@ jQuery ->
     dataType: 'script'
     cache: true
 
+
 window.fbAsyncInit = ->
-  FB.init(appId: '<%= ENV["FACEBOOK_APP_ID"] %>', cookie: true)
+  FB.init(appId: '<%= ENV["506537142787997"] %>', cookie: true)
+  FB.getAuthResponse()['accessToken']
 
   $('#sign_in').click (e) ->
     e.preventDefault()
     FB.login (response) ->
-      window.location = '/auth/facebook/callback' if response.authResponse
-    , scope: '<%= ENV["FACEBOOK_SCOPE"] %>'
+      window.location = 'users#finish_signup' if response.authResponse
+      scope: "email, offline_access, user_birthday, user_friends, read_friendlists, friends_birthday"
 
   $('#sign_out').click (e) ->
     FB.getLoginStatus (response) ->
       FB.logout() if response.authResponse
     true
-
-  if $('#sign_out').length > 0
-    FB.getLoginStatus (response) ->
-      window.location = $('#sign_out').attr("href") if !response.authResponse
